@@ -1,23 +1,26 @@
 using UnityEngine;
+using RPG.Movement;
 
-public class PlayerController : MonoBehaviour
+namespace RPG.Control
 {
-    void Update()
+    public class PlayerController : MonoBehaviour
     {
-        if (Input.GetMouseButton(0))
+        void Update()
         {
-            MoveToCursor();
+            if (Input.GetMouseButton(0))
+            {
+                MoveToCursor();
+            }
+        }
+        private void MoveToCursor()
+        {
+            // Move the NavMeshAgent to the cursor location
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            bool hasHit = Physics.Raycast(ray, out RaycastHit hitInfo);
+            if (hasHit)
+            {
+                GetComponent<Mover>().MoveTo(hitInfo.point);
+            }
         }
     }
-    private void MoveToCursor()
-    {
-        // Move the NavMeshAgent to the cursor location
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        bool hasHit = Physics.Raycast(ray, out RaycastHit hitInfo);
-        if (hasHit)
-        {
-            GetComponent<Mover>().MoveTo(hitInfo.point);
-        }
-    }
-
 }
