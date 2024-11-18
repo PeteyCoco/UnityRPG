@@ -1,7 +1,7 @@
 using UnityEngine;
-using RPG.Movement;
 using Unity.VisualScripting;
-
+using RPG.Core;
+using RPG.Movement;
 
 namespace RPG.Combat
 {
@@ -13,23 +13,32 @@ namespace RPG.Combat
 
         private void Update()
         {
-            if (target)
-            {
-                bool isInRange = Vector3.Distance(target.position, transform.position) < weaponRange;
+            if (!target) return;
 
-                if (!isInRange)
-                {
-                    GetComponent<Mover>().MoveTo(target.position);
-                }
-                else
-                {
-                    GetComponent<Mover>().Stop();
-                }
+            if (!GetIsInRange())
+            {
+                GetComponent<Mover>().MoveTo(target.position);
+            }
+            else
+            {
+                GetComponent<Mover>().Stop();
             }
         }
+
+        private bool GetIsInRange()
+        {
+            return Vector3.Distance(target.position, transform.position) < weaponRange;
+        }
+
         public void Attack(CombatTarget combatTarget)
         {
+            GetComponent<ActionScheduler>().StartAction(this);
             target = combatTarget.transform;
+        }
+
+        public void Cancel()
+        {
+            target = null;
         }
     }
 }
