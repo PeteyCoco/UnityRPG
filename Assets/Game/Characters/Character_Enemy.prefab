@@ -9,6 +9,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 701831561552651664, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 701831561552651664, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
       propertyPath: timeBetweenAttacks
       value: 1.1
       objectReference: {fileID: 0}
@@ -62,7 +66,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6139131699320920935, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
       propertyPath: healthPoints
-      value: 20
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 6476468014759769947, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
       propertyPath: m_Speed
@@ -149,6 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chaseDistance: 5
   suspicionTime: 5
+  waypointDwellTime: 3
+  patrolPath: {fileID: 0}
+  waypointTolerance: 1
 --- !u!1001 &6465170832045486548
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -74,6 +74,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 701831561552651664, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
+      propertyPath: weaponDamage
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5414207208188358617, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -121,6 +125,10 @@ PrefabInstance:
     - target: {fileID: 6067246644468751954, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 6139131699320920935, guid: 53f4b623792a5b54e9e0b7c6bdf296ef, type: 3}
+      propertyPath: healthPoints
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
